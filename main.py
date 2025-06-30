@@ -45,7 +45,7 @@ def submit_data():
 
 root = tk.Tk()
 root.title("War Data Registry")
-root.geometry("400x600")
+root.geometry("400x800")
 root.config(bg="light green")
 
 
@@ -85,6 +85,24 @@ tk.Label(root, text=total_injured_count()).grid(row=8, column=1, padx=15, pady=1
 
 tk.Label(root, text='Total Victim Count: ').grid(row=9, column=0, padx=15, pady=10)
 tk.Label(root, text=total_martyr_injured_count()).grid(row=9, column=1, padx=15, pady=10)
+
+tk.Label(root, text='Most Damaged Region: ').grid(row=10, column=0, padx=15, pady=10)
+tk.Label(root, text=most_damaged_region()).grid(row=10, column=1, padx=15, pady=10)
+
+tk.Label(root, text='Least Damaged Region: ').grid(row=11, column=0, padx=15, pady=10)
+tk.Label(root, text=least_damaged_region()).grid(row=11, column=1, padx=15, pady=10)
+
+tk.Label(root, text='Highest Victims Date: ').grid(row=12, column=0, padx=15, pady=10)
+tk.Label(root, text=highest_victims_date()).grid(row=12, column=1, padx=15, pady=10)
+
+tk.Label(root, text='Lowest Victims Date: ').grid(row=13, column=0, padx=15, pady=10)
+tk.Label(root, text=lowest_victims_date()).grid(row=13, column=1, padx=15, pady=10)
+
+tk.Label(root, text='Attack Type Count: ').grid(row=14, column=0, padx=15, pady=10)
+tk.Label(root, text=attack_type_count()).grid(row=14, column=1, padx=15, pady=10)
+
+tk.Label(root, text='Martyr Percentage By Region: ').grid(row=15, column=0, padx=15, pady=10)
+tk.Label(root, text=martyr_percentage_by_region('Shigaeya')).grid(row=15, column=1, padx=15, pady=10)
 
 
 root.mainloop()
