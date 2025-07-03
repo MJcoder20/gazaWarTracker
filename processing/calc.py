@@ -37,12 +37,7 @@ def total_martyr_injured_count():
 def most_damaged_region():
     target_column_name_1 = "Damaged Homes Count"
     target_column_name_2 = "Region"
-    # regions = ["Rafah", 'Khanyunis', "Deir_El_Balah", "Zawaida", "Qarara", "Nusairat", 'Shigaeya', "Baithanoun", "Baitlahya",
-    #            "Gaza-Tal_El_Hawaa", "Gaza-Rimal", "Gaza-Tuffah", "Gaza-Jalaa", "Gaza-Nasser"]
     if target_column_name_1 in df.columns and target_column_name_2 in df.columns:
-        # for region in regions:
-        #     sums = df[df["Region" == region]]["Damaged Homes Count"].sum()
-        #Add damaged house count for each region
         regions = df["Region"].unique()
         region_damaged_homes_count = dict.fromkeys(regions, 0)
         region = df["Region"]
@@ -72,8 +67,8 @@ def least_damaged_region():
         least_damaged = min(region_damaged_homes_count, key=region_damaged_homes_count.get)
         return least_damaged
     else:
-            print(f"Column '{target_column_name_1}' or '{target_column_name_2}' not found.")
-            return None
+        print(f"Column '{target_column_name_1}' or '{target_column_name_2}' not found.")
+        return None
 
 
 def highest_victims_date():
