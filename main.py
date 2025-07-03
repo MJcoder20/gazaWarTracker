@@ -89,6 +89,24 @@ def attacks_window():
     root2.mainloop()
 
 
+def about_usage():
+    root3 = tk.Tk()
+    root3.title("Usage Instructions")
+    root3.geometry("100x100")
+    root3.config(bg="light gray")
+    tk.Label(root3, text='Basic Usage guidelines: ', bg="skyblue").grid(row=7, column=0, padx=15, pady=10)
+    tk.Label(root3, text="1. Enter data into all the fields or else none of the data will be stored."
+                         "\n2. Recently submitted data won't appear in the statistics or the visuals windows "
+                         "unless you rerun the app.").grid(row=8, column=0, padx=15, pady=10)
+
+    # Allow the window to resize automatically
+    root3.update_idletasks()
+    root3.minsize(root3.winfo_reqwidth(), root3.winfo_reqheight())
+
+    # Run the application
+    root3.mainloop()
+
+
 root = tk.Tk()
 root.title("War Data Registry")
 root.geometry("200x200")
@@ -101,16 +119,20 @@ root.config(menu=menubar)  # Associate the menu bar with the window
 
 statsMenu = tk.Menu(menubar, tearoff=0)  # tearoff=0 removes the dashed line
 menubar.add_cascade(label="Statistics", menu=statsMenu)  # Add stats menu to the menubar
-statsMenu.add_command(label="Attacks Data", command=attacks_window) # creates a new window with the calculated statistics
+statsMenu.add_command(label="Attacks Data", command=attacks_window) # creates a new window with the calculated stats
 
-visualizeMenu = tk.Menu(menubar, tearoff=0)  # tearoff=0 removes the dashed line
+visualizeMenu = tk.Menu(menubar, tearoff=0)
 menubar.add_cascade(label="Visualization", menu=visualizeMenu)  # Add visualize menu to the menubar
+#Each of the following menu items displays a different visual
 visualizeMenu.add_command(label="Martyr Count By Date", command=line_chart)
 visualizeMenu.add_command(label="Most Damaged Regions", command=damaged_regions_bar_chart)
 visualizeMenu.add_command(label="Attack Type Distribution", command=pie_chart)
 visualizeMenu.add_command(label="Days with the highest martyr counts", command=martyr_counts_bar_chart)
 visualizeMenu.add_command(label="Heatmap of Damaged Homes by Region and Attack Type", command=heatmap)
 
+aboutMenu = tk.Menu(menubar, tearoff=0)
+menubar.add_cascade(label="About", menu=aboutMenu) # Add about menu to explain our app's functionality
+aboutMenu.add_command(label="Usage", command=about_usage)
 
 # Labels and Entry fields
 tk.Label(root, text="Date:").grid(row=0, column=0, padx=15, pady=10)
