@@ -1,57 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import geopandas as gpd
-import folium
-
-
-# nz = gpd.read_file('../data/gaza_240503.gpkg')
-# # Read the GeoPackage file
-# gdf = gpd.read_file('../data/gaza_240503.gpkg', layer=None)
-# layers = gpd.list_layers('../data/gaza_240503.gpkg')
-# # Display the first few rows of attributes
-# print(gdf.head())
-# print(layers)
-# # List all attribute column names
-# print("Attribute columns:", gdf.columns)
-# print(nz.head())
-# nz.plot()
-
-# vars = ['Land_area', 'Population', 'Median_income', 'Sex_ratio']
-# nz[vars]
-# fig, ax = plt.subplots()
-# nz.plot(ax=ax, color='none')
-# nz.plot(color='green')
-
-# fig, ax = plt.subplots()
-# nz.plot(ax=ax, color='none', edgecolor='lightgrey')
-
-
-# fig, ax = plt.subplots()
-# nz.plot(ax=ax, color='lightgrey', edgecolor='grey')
-# nz.apply(
-#     lambda x: ax.annotate(
-#         text=x['Name'],
-#         xy=x.geometry.centroid.coords[0],
-#         ha='center'
-#     ),
-#     axis=1
-# );
-
-# ctr = nz[['Island', 'geometry']].dissolve(by='Island').reset_index()
-# ctr['geometry'] = ctr.centroid
-# fig, ax = plt.subplots()
-# nz.plot(ax=ax, color='none', edgecolor='lightgrey')
-# ctr.apply(
-#     lambda x: ax.annotate(
-#         text=x['Island'],
-#         xy=x.geometry.coords[0],
-#         ha='center',
-#         weight='bold'
-#     ),
-#     axis=1
-# );
-# plt.show()
 
 
 # read Excel file
