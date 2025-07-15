@@ -49,7 +49,7 @@ def pie_chart():
 def martyr_counts_bar_chart():
     top_days = df.sort_values("Martyr Count", ascending=False).head(5)
     plt.figure(figsize=(8, 6))
-    sns.barplot(x=top_days["Date"].dt.strftime('%Y-%m-%d'), y=top_days["Martyr Count"])
+    sns.barplot(x=top_days["Date"].dt.strftime('%Y/%m/%d'), y=top_days["Martyr Count"])
     plt.title("Top 5 Deadliest Days")
     plt.xlabel("Date")
     plt.ylabel("Martyr Count")
