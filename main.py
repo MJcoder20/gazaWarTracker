@@ -45,12 +45,12 @@ def submit_data():
             sheet.append(['Date', 'Region', "Martyr Count", 'Injured Count', 'Damaged Homes Count', 'Attack Type'])
 
         regions = ['Shigaeya', 'Baithanoun', 'Baitlahya', 'Nusairat', 'Deir-El-Balah', 'Zawaida', 'Khanyunis',
-                   'Rafah', 'Gaza-Jalaa', 'Gaza-El_Saha', 'Gaza-Tuffah', 'Gaza-Rimal', 'Gaza-Tal_El_Hawaa',
+                   'Rafah', 'Gaza-Jalaa', 'Gaza-El_Saha', 'Gaza-Tuffah', 'Gaza-Rimal', 'Gaza-El_Menaa','Gaza-Tal_El_Hawaa',
                    'Gaza-El_Sheikh_Redawan', 'Gaza-El_Nasser']
         # Append user data
         if validate_date() and region and (region in regions) and martyr_count.isdigit() and injured_count.isdigit() \
                 and damaged_homes_count.isdigit() and attack_type and attack_type in \
-                ['Ground', 'Arial', 'Seaborn']:
+                ['Ground', 'Arial', 'Naval']:
             sheet.append([validate_date(), region, martyr_count, injured_count, damaged_homes_count, attack_type])
             workbook.save("data/Book1.xlsx")
             messagebox.showinfo("Success", "Data saved successfully!")
@@ -60,7 +60,8 @@ def submit_data():
             injured_count_entry.delete(0, tk.END)
             damaged_homes_count_entry.delete(0, tk.END)
             attack_type_entry.delete(0, tk.END)
-
+        else:
+            messagebox.showerror("Error", f"Please check your data! ")
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred: {e}")
 
